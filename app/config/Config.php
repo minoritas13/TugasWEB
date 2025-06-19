@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/PROJEKWEB/public');
+define('BASEURL', 'http://localhost/TugasWeb/public');
 
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'projek_web');

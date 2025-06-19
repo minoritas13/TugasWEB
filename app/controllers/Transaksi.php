@@ -1,28 +1,26 @@
 <?php
 
-class Main extends Controller
+class Transaksi extends Controller
 {
-
     public function index()
     {
         session_start();
         $username = $_SESSION['user']['username'];
         $data['user'] = $username;
-        $data['title'] = 'Main';
+        $data['title'] = 'kategori';
         $data['kategori'] = $this->model('Model_kategori')->getAllKategori();
-        $data['barang'] = $this->model('Model_barang')->getAllBarang();
-        
-        
+
         if (!isset($_SESSION['user'])) {
             header('Location: ' . BASEURL);
         } else {
-            if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
-                header('Location: ' . BASEURL . '/dashboardAdmin');
+            if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+                header('Location: ' . BASEURL . '/main');
                 exit;
             }
+            $data['title'] = 'Riwayat Transaksi';
+            $data['transaksi'] = $this->model('Model_transaksi')->getAllTransaksi();
 
-            $this->view('template/header', $data);
-            $this->view('main/index', $data);
+            $this->view('transaksi/index', $data);
             $this->view('template/footer');
         }
     }

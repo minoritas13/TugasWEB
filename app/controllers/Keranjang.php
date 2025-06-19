@@ -6,6 +6,8 @@ class Keranjang extends Controller
     public function index()
     {
         session_start();
+        $username = $_SESSION['user']['username'];
+        $data['user'] = $username;
         $data['title'] = 'Keranjang';
         $data['cart'] = $_SESSION['cart'] ?? [];
         $data['barang'] = $this->model('Model_barang')->getAllBarang();

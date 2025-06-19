@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 09, 2025 at 08:19 PM
--- Server version: 8.4.3
--- PHP Version: 8.3.16
+-- Waktu pembuatan: 19 Jun 2025 pada 15.43
+-- Versi server: 8.4.3
+-- Versi PHP: 8.3.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
+-- Struktur dari tabel `barang`
 --
 
 CREATE TABLE `barang` (
@@ -36,7 +36,7 @@ CREATE TABLE `barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `barang`
+-- Dumping data untuk tabel `barang`
 --
 
 INSERT INTO `barang` (`id`, `nama`, `harga`, `stok`, `kategori_id`) VALUES
@@ -49,12 +49,52 @@ INSERT INTO `barang` (`id`, `nama`, `harga`, `stok`, `kategori_id`) VALUES
 (7, 'Kertas HVS A4', 40000, 30, 4),
 (8, 'Map Plastik', 1500, 80, 4),
 (9, 'Stapler Kenko', 12000, 25, 4),
-(10, 'Tip-Ex', 3000, 60, 4);
+(10, 'Tip-Ex', 3000, 60, 4),
+(18, 'Pensil Mekanik', 6000, 40, 4),
+(19, 'Isi Pensil 0.5mm', 3000, 70, 4),
+(20, 'Penghapus Putih Staedtler', 2000, 60, 4),
+(21, 'Bolpoin Pilot G2', 10000, 25, 4),
+(22, 'Sticky Notes Warna-warni', 5000, 50, 4),
+(23, 'Paper Clip Jumbo', 2500, 80, 4),
+(24, 'Correction Tape Joyko', 6000, 45, 4),
+(25, 'Binder Clip Besar', 3500, 30, 4),
+(26, 'Kertas Folio Bergaris', 8000, 60, 4),
+(27, 'Highlighter Stabilo', 7000, 55, 4),
+(28, 'Kue Lapis Legit Slice', 7500, 30, 2),
+(29, 'Sereal Koko Krunch Mini', 9500, 40, 2),
+(30, 'Permen Kopiko', 3000, 100, 2),
+(31, 'Wafer Tango Coklat', 8000, 60, 2),
+(32, 'Kue Pia Cap Mangkok', 7000, 35, 2),
+(33, 'Keripik Balado 100gr', 10000, 45, 2),
+(34, 'Mie Sedap Ayam Bawang', 3000, 90, 2),
+(35, 'Roti Sisir Keju', 8500, 25, 2),
+(36, 'Biskuit Lemonia', 6000, 50, 2),
+(37, 'Permen Relaxa', 2500, 120, 2),
+(38, 'Sprite Kaleng 330ml', 6000, 40, 3),
+(39, 'Fanta Botol 390ml', 6500, 35, 3),
+(40, 'Teh Pucuk Harum', 5000, 75, 3),
+(41, 'Good Day Freeze', 6000, 60, 3),
+(42, 'Ultra Milk Stroberi', 7000, 50, 3),
+(43, 'Floridina Jeruk', 4500, 65, 3),
+(44, 'Fruit Tea Apel', 5500, 55, 3),
+(45, 'Le Minerale 600ml', 4000, 85, 3),
+(46, 'Nu Green Tea', 5000, 70, 3),
+(47, 'You C1000 Vitamin C', 8000, 30, 3),
+(48, 'Bawang Putih 250gr', 8000, 40, 1),
+(49, 'Bawang Merah 250gr', 9000, 35, 1),
+(50, 'Saos Sambal ABC', 12000, 25, 1),
+(51, 'Royco Ayam 230gr', 10000, 40, 1),
+(52, 'Santan Kara 65ml', 3000, 80, 1),
+(53, 'Margarine Blue Band 200gr', 12000, 30, 1),
+(54, 'Kopi Bubuk Kapal Api 100gr', 7000, 60, 1),
+(55, 'Susu Kental Manis Frisian Flag', 9000, 50, 1),
+(56, 'Minyak Goreng Tropical 1L', 17000, 40, 1),
+(57, 'Tepung Bumbu Sajiku 200gr', 4000, 55, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -63,7 +103,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id`, `nama_kategori`) VALUES
@@ -75,7 +115,7 @@ INSERT INTO `kategori` (`id`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -87,7 +127,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `transaksi`
+-- Dumping data untuk tabel `transaksi`
 --
 
 INSERT INTO `transaksi` (`id`, `tanggal`, `total`, `kasir_id`, `pelanggan`) VALUES
@@ -100,7 +140,7 @@ INSERT INTO `transaksi` (`id`, `tanggal`, `total`, `kasir_id`, `pelanggan`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi_detail`
+-- Struktur dari tabel `transaksi_detail`
 --
 
 CREATE TABLE `transaksi_detail` (
@@ -113,7 +153,7 @@ CREATE TABLE `transaksi_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `transaksi_detail`
+-- Dumping data untuk tabel `transaksi_detail`
 --
 
 INSERT INTO `transaksi_detail` (`id`, `transaksi_id`, `barang_id`, `jumlah`, `harga`, `subtotal`) VALUES
@@ -130,7 +170,7 @@ INSERT INTO `transaksi_detail` (`id`, `transaksi_id`, `barang_id`, `jumlah`, `ha
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -141,7 +181,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
@@ -153,27 +193,27 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 --
 
 --
--- Indexes for table `barang`
+-- Indeks untuk tabel `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_kategori` (`kategori_id`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`),
   ADD KEY `kasir_id` (`kasir_id`);
 
 --
--- Indexes for table `transaksi_detail`
+-- Indeks untuk tabel `transaksi_detail`
 --
 ALTER TABLE `transaksi_detail`
   ADD PRIMARY KEY (`id`),
@@ -181,64 +221,64 @@ ALTER TABLE `transaksi_detail`
   ADD KEY `barang_id` (`barang_id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `barang`
+-- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `transaksi`
+-- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `transaksi_detail`
+-- AUTO_INCREMENT untuk tabel `transaksi_detail`
 --
 ALTER TABLE `transaksi_detail`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `barang`
+-- Ketidakleluasaan untuk tabel `barang`
 --
 ALTER TABLE `barang`
   ADD CONSTRAINT `fk_kategori` FOREIGN KEY (`kategori_id`) REFERENCES `kategori` (`id`);
 
 --
--- Constraints for table `transaksi`
+-- Ketidakleluasaan untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`kasir_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `transaksi_detail`
+-- Ketidakleluasaan untuk tabel `transaksi_detail`
 --
 ALTER TABLE `transaksi_detail`
   ADD CONSTRAINT `transaksi_detail_ibfk_1` FOREIGN KEY (`transaksi_id`) REFERENCES `transaksi` (`id`),

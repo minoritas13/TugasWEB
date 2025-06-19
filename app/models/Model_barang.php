@@ -27,11 +27,12 @@ class Model_barang
     // Tambah data barang
     public function tambahBarang($data)
     {
-        $query = "INSERT INTO barang (nama, harga, stok, gambar) VALUES (:nama, :harga, :stok, :gambar)";
+        $query = "INSERT INTO barang (nama, harga, stok, kategori_id, gambar) VALUES (:nama, :harga, :stok, :kategori_id, :gambar)";
         $this->db->query($query);
         $this->db->bind(':nama', $data['nama']);
         $this->db->bind(':harga', $data['harga']);
         $this->db->bind(':stok', $data['stok']);
+        $this->db->bind(':kategori_id',$data['kategori_id']);
         $this->db->bind(':gambar', $data['gambar']);
         return $this->db->execute();
     }

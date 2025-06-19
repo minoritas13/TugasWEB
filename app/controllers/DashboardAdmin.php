@@ -13,10 +13,23 @@ class DashboardAdmin extends Controller
 
         $data['kategori_terpilih'] = $_POST['kategori_id'] ?? '';
         // Kalau pakai sort/filter kategori
-        if (isset($_POST['kategori_id'])) {
-            $id = $_POST['kategori_id'];
-            $data['barang'] = $this->model('Model_barang')->getBarangByKategori($id);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $kategori_id = $_POST['kategori_id'];
+
+            if (!empty($kategori_id)) {
+                $data['barang'] = $this->model('Model_barang')->getBarangByKategori($kategori_id);
+                $data['kategori_terpilih'] = $kategori_id;
+            } else {
+                // Jika kosong (semua kategori), tampilkan semua barang
+                $data['barang'] = $this->model('Model_barang')->getAllBarang();
+                $data['kategori_terpilih'] = '';
+            }
+        } else {
+            // Saat pertama kali halaman dibuka
+            $data['barang'] = $this->model('Model_barang')->getAllBarang();
+            $data['kategori_terpilih'] = '';
         }
+
 
         if (!isset($_SESSION['user'])) {
             header('Location: ' . BASEURL);
@@ -44,6 +57,7 @@ class DashboardAdmin extends Controller
             $nama  = $_POST['nama'];
             $harga = $_POST['harga'];
             $stok  = $_POST['stok'];
+            $kategori_id = $_POST['kategori_id'];
 
             // Cek apakah file gambar diupload
             if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === 0) {
@@ -57,6 +71,7 @@ class DashboardAdmin extends Controller
                         'nama' => $nama,
                         'harga' => $harga,
                         'stok' => $stok,
+                        'kategori_id' => $kategori_id,
                         'gambar' => $lokasi
                     ]);
 
@@ -75,6 +90,7 @@ class DashboardAdmin extends Controller
         }
 
         // Jika bukan POST, tampilkan form tambah
+        $data['kategori'] = $this->model('Model_kategori')->getAllKategori();
         $data['title'] = 'Tambah Barang';
         $this->view('dashboardAdmin/tambah', $data);
         $this->view('template/footer');
@@ -104,6 +120,7 @@ class DashboardAdmin extends Controller
             $harga = $_POST['harga'];
             $stok  = $_POST['stok'];
             $id    = $_POST['id'];
+            $kategori_id = $_POST['kategori_id'];
             $gambarLama = $_POST['gambar_lama'];
 
             $gambarPath = $gambarLama;
@@ -133,6 +150,7 @@ class DashboardAdmin extends Controller
                 'nama'  => $nama,
                 'harga' => $harga,
                 'stok'  => $stok,
+                'kategori_id' => $kategori_id,
                 'gambar' => $gambarPath
             ]);
 

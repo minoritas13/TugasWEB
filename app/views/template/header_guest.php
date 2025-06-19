@@ -16,7 +16,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="<?= BASEURL; ?>">
-            <img class="h-8" src="<?= BASEURL; ?>/img/default.png" alt="Logo">
+            <img class="h-8" src="<?= BASEURL; ?>/img/logonew.png" alt="Logo">
           </a>
         </div>
 
@@ -38,10 +38,8 @@
 
         <!-- Right Side -->
         <div class="flex items-center gap-4">
-          <a href="#" class="text-gray-700 hover:text-gray-900 font-medium">Promo</a>
-          <div class="w-px h-6 bg-gray-300"></div>
-          <a href="#" class="text-gray-700 hover:text-gray-900 font-medium">Daftar</a>
-          <a href="<?= BASEURL; ?>/dashboardKasir" class="text-gray-700 hover:text-gray-900 font-medium">Masuk</a>
+          <a href="<?= BASEURL?>/Register" class="text-gray-700 hover:text-gray-900 font-medium">Daftar</a>
+          <a href="<?= BASEURL; ?>" class="text-gray-700 hover:text-gray-900 font-medium">Masuk</a>
         </div>
 
       </div>

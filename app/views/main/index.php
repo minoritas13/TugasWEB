@@ -3,10 +3,10 @@
 
   <!-- Banner Section -->
   <section class="bg-white py-4">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
-      <img src="assets/cash.jpg" class="rounded-lg">
-      <img src="assets/cash.jpg" class="rounded-lg">
-      <img src="assets/cash.jpg" class="rounded-lg">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 overflow-x-auto whitespace-nowrap">
+      <img src="<?= BASEURL ?>/img/cash.jpg" class="rounded-lg">
+      <img src="<?= BASEURL ?>/img/promo1.png" class="rounded-lg">
+      <img src="<?= BASEURL ?>/img/promo2.png" class="rounded-lg">
     </div>
   </section>
 

@@ -6,6 +6,8 @@ class Kategori extends Controller
     public function index()
     {
         session_start();
+        $username = $_SESSION['user']['username'];
+        $data['user'] = $username;
         $data['title'] = 'kategori';
         $data['kategori'] = $this->model('Model_kategori')->getAllKategori();
 
@@ -29,6 +31,8 @@ class Kategori extends Controller
 
         // jika kategori di klik
         if ($id !== null) {
+            $username = $_SESSION['user']['username'];
+            $data['user'] = $username;
             $data['title'] = 'Produk';
             $data['title'] = 'Kategori';
             $data['barang'] = $this->model('Model_barang')->getBarangByKategori($id);

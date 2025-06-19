@@ -19,7 +19,7 @@ class Model_transaksi
         $this->db->execute();
 
         $transaksi_id = $this->db->lastInsertId(); // dapatkan ID transaksi terbaru
-         
+
         // menyimpan detail barang
         foreach ($data['items'] as $item) {
             $this->db->query("INSERT INTO transaksi_detail (transaksi_id, barang_id, jumlah, harga, subtotal) VALUES (:transaksi_id, :barang_id, :jumlah, :harga, :subtotal)");
@@ -36,7 +36,17 @@ class Model_transaksi
 
     public function getAllTransaksi()
     {
-        $this->db->query("SELECT * FROM transaksi ORDER BY tanggal DESC");
+        $this->db->query("
+        SELECT 
+            t.id,
+            t.tanggal,
+            t.pelanggan,
+            u.username AS pembeli,
+            t.total
+        FROM transaksi t
+        JOIN users u ON t.user_id = u.id
+        ORDER BY t.tanggal DESC
+    ");
         return $this->db->resultSet();
     }
 }

@@ -16,7 +16,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="<?= BASEURL; ?>">
-            <img class="h-8" src="<?= BASEURL; ?>/img/default.png" alt="Logo">
+            <img class="h-8" src="<?= BASEURL; ?>/img/logonew.png" alt="Logo">
           </a>
         </div>
 
@@ -38,7 +38,6 @@
 
         <!-- Right Side -->
         <div class="flex items-center gap-4">
-          <a href="#" class="text-gray-700 hover:text-gray-900 font-medium">Promo</a>
           <a href="<?= BASEURL ?>/keranjang" class="text-gray-700 hover:text-gray-900">
             🛒
           </a>
@@ -49,7 +48,7 @@
               <svg class="w-6 h-6 text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#000000" viewBox="0 0 24 24">
                 <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd" />
               </svg>
-              <button class="p-2 flex items-center gap-2 font-semibold focus:outline-none">Nafis</button>
+              <button class="p-2 flex items-center gap-2 font-semibold focus:outline-none"><?= $data['user'];?></button>
             </div>
             <div class="relative">
               <!-- Dropdown Menu -->
@@ -58,7 +57,7 @@
                 <div class="p-4 border-b border-gray-200">
                   <div class="flex items-center gap-2">
                     <i class="fas fa-user text-gray-500 text-xl"></i>
-                    <span class="font-semibold">Nafis</span>
+                    <span class="font-semibold"><?= $data['user'];?></span>
                   </div>
                 </div>
                 <div class="p-4">
