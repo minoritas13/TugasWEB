@@ -41,6 +41,9 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `nama`, `harga`, `stok`, `kategori_id`, `gambar`) VALUES
+-- ===============================
+-- Alat Tulis (kategori_id = 4)
+-- ===============================
 (1, 'Pensil 2B', 1500, 16, 4, 'img/1750357454_1.png'),
 (2, 'Buku Tulis Sidu', 3500, 200, 4, 'img/1750357464_2.png'),
 (3, 'Pulpen Standard', 2500, 150, 4, 'img/1750357472_3.png'),
@@ -51,8 +54,68 @@ INSERT INTO `barang` (`id`, `nama`, `harga`, `stok`, `kategori_id`, `gambar`) VA
 (8, 'Map Plastik', 1500, 80, 4, 'img/1750357499_7.png'),
 (9, 'Stapler Kenko', 12000, 25, 4, 'img/1750357523_8.png'),
 (10, 'Tip-Ax', 30000, 50, 4, 'img/1750357544_9.png'),
-(21, 'indomie', 3000, 200, 2, 'img/1750060181_download.jpg'),
-(22, 'Pop mie', 8000, 40, 2, 'img/1750357531_10.png');
+(66, 'Tinta Printer', 50000, 10, 4, 'img/1750357523_8.png'),
+(67, 'Kalkulator Casio', 75000, 8, 4, 'img/1750357544_9.png'),
+(68, 'Buku Gambar', 7000, 20, 4, 'img/1750357454_1.png'),
+(69, 'Pensil Warna 12', 18000, 15, 4, 'img/1750357464_2.png'),
+(70, 'Lem Kertas UHU', 6000, 25, 4, 'img/1750357472_3.png'),
+
+-- ===============================
+-- Makanan (kategori_id = 2)
+-- ===============================
+(21, 'Indomie', 3000, 200, 2, 'img/1750060181_download.jpg'),
+(22, 'Pop Mie', 8000, 40, 2, 'img/1750357531_10.png'),
+(38, 'Mie Sedap Goreng', 3500, 100, 2, 'img/1750357499_7.png'),
+(39, 'Roti Tawar', 12000, 25, 2, 'img/1750357506_6.png'),
+(40, 'Chitato Sapi Panggang', 8000, 40, 2, 'img/1750357514_5.png'),
+(41, 'Biskuit Roma Kelapa', 5000, 60, 2, 'img/1750357544_9.png'),
+(42, 'SilverQueen Coklat', 15000, 30, 2, 'img/1750357454_1.png'),
+(43, 'Sari Roti Coklat', 7000, 45, 2, 'img/1750357464_2.png'),
+(44, 'Permen Mentos', 3000, 80, 2, 'img/1750357472_3.png'),
+(45, 'Astor Coklat', 9000, 35, 2, 'img/1750357490_9.png'),
+(46, 'Good Time Cookies', 11000, 50, 2, 'img/1750357482_4.png'),
+(47, 'Choki Choki', 2000, 70, 2, 'img/1750357499_7.png'),
+(48, 'Energen Coklat', 4000, 60, 2, 'img/1750357523_8.png'),
+(49, 'Sereal Koko Krunch', 25000, 20, 2, 'img/1750357506_6.png'),
+(50, 'Bubur Instan Ayam', 7000, 40, 2, 'img/1750357544_9.png'),
+
+-- ===============================
+-- Kebutuhan Dapur (kategori_id = 1)
+-- ===============================
+(23, 'Sapu Lidi', 10000, 20, 1, 'img/1750357454_1.png'),
+(24, 'Sabun Cuci Piring', 8000, 35, 1, 'img/1750357464_2.png'),
+(25, 'Minyak Goreng 1L', 17000, 50, 1, 'img/1750357472_3.png'),
+(26, 'Garam Dapur', 3000, 100, 1, 'img/1750357490_9.png'),
+(27, 'Gula Pasir 1Kg', 14000, 80, 1, 'img/1750357482_4.png'),
+(28, 'Tepung Terigu Segitiga', 12000, 60, 1, 'img/1750357514_5.png'),
+(29, 'Kecap Manis ABC', 11000, 70, 1, 'img/1750357506_6.png'),
+(30, 'Sikat Lantai', 9000, 50, 1, 'img/1750357499_7.png'),
+(31, 'Spons Cuci Piring', 3000, 120, 1, 'img/1750357523_8.png'),
+(32, 'Ember Plastik', 15000, 25, 1, 'img/1750357544_9.png'),
+(33, 'Talenan Kayu', 18000, 30, 1, 'img/1750357454_1.png'),
+(34, 'Panci Kecil', 40000, 15, 1, 'img/1750357464_2.png'),
+(35, 'Wajan Anti Lengket', 85000, 10, 1, 'img/1750357472_3.png'),
+(36, 'Minyak Kayu Putih', 9000, 20, 1, 'img/1750357490_9.png'),
+(37, 'Sabun Mandi Lifebuoy', 4500, 100, 1, 'img/1750357482_4.png'),
+
+-- ===============================
+-- Minuman (kategori_id = 3)
+-- ===============================
+(51, 'Susu Ultra Coklat', 7000, 60, 3, 'img/1750357490_9.png'),
+(52, 'Teh Kotak Jasmine', 5000, 40, 3, 'img/1750357482_4.png'),
+(53, 'Aqua Botol 600ml', 4000, 100, 3, 'img/1750357514_5.png'),
+(54, 'Floridina Jeruk', 5000, 80, 3, 'img/1750357506_6.png'),
+(55, 'Mizone Active', 6000, 30, 3, 'img/1750357499_7.png'),
+(56, 'Susu Bear Brand', 11000, 40, 3, 'img/1750357523_8.png'),
+(57, 'Green Tea Ichitan', 7000, 25, 3, 'img/1750357544_9.png'),
+(58, 'Coca Cola 1L', 9000, 20, 3, 'img/1750357454_1.png'),
+(59, 'Pocari Sweat Botol', 8500, 30, 3, 'img/1750357464_2.png'),
+(60, 'Le Minerale 600ml', 3000, 90, 3, 'img/1750357472_3.png'),
+(61, 'Ultrajaya Teh Manis', 5000, 45, 3, 'img/1750357490_9.png'),
+(62, 'Susu Indomilk', 6500, 50, 3, 'img/1750357482_4.png'),
+(63, 'You C1000 Orange', 8000, 20, 3, 'img/1750357499_7.png'),
+(64, 'Fruit Tea Apel', 6000, 35, 3, 'img/1750357506_6.png'),
+(65, 'Fanta 1L', 9000, 20, 3, 'img/1750357514_5.png');
 
 -- --------------------------------------------------------
 
